@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FirstDesign" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/pino_oscuro</item>
+        <item name="android:textColor">@color/pino_oscuro</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Base.Theme.FirstDesign">
+        <item name="android:statusBarColor">@color/dark_gray</item>
+    </style>
+
+</resources>
