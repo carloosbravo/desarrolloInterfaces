@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Login"
+    android:background="@drawable/gradient">
 
     <ImageView
         android:id="@+id/logoLogin"
@@ -21,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:fontFamily="@font/ketikaregular"
+        android:fontFamily="@font/lemonmilk"
         android:text="EventUp"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,9 +111,10 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="132dp"
-        android:layout_height="14dp"
+        android:layout_width="134dp"
+        android:layout_height="21dp"
         android:layout_marginEnd="28dp"
+        android:onClick="showAlertviewContraseña"
         android:text="olvidé mi contraseña"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,5 +127,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="419dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="©EventUp | License GPLv3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="671dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
