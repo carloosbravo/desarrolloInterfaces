@@ -16,6 +16,12 @@
         android:theme="@style/Base.Theme.FirstDesign"
         tools:targetApi="31">
         <activity
+            android:name=".CrearEvento"
+            android:exported="false" />
+        <activity
+            android:name=".Perfil"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
@@ -33,7 +39,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
