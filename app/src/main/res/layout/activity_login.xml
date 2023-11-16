@@ -116,6 +116,7 @@
         android:layout_marginEnd="28dp"
         android:onClick="showAlertviewContraseña"
         android:text="olvidé mi contraseña"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
