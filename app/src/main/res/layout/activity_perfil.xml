@@ -105,5 +105,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewBio"
         app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pepepepito"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        app:layout_constraintStart_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/imagePerfil" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
