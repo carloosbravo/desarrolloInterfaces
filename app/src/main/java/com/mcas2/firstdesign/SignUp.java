@@ -1,17 +1,13 @@
 package com.mcas2.firstdesign;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.mcas2.firstdesign.database.User;
 
@@ -53,11 +49,11 @@ public class SignUp extends AppCompatActivity {
         u.password = passwordString;
         users.put(usernameString,u);
 
-        firestoreDb.collection("Usuarios").document()
+        firestoreDb.collection("Usuarios").document(usernameString)
                 .set(users).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Intent toLobby = new Intent(SignUp.this, Looby.class);
+                        Intent toLobby = new Intent(SignUp.this, Lobby.class);
                         toLobby.putExtra("username", usernameString);
                         startActivity(toLobby);
                     }

@@ -78,6 +78,6 @@ public class Login extends AppCompatActivity {
 
         FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
         Map<String, User> users = new HashMap<>();
-        firestoreDb.collection("EventUp").document();
+        firestoreDb.collection("Collection").document();
     }
 }

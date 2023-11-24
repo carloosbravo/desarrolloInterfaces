@@ -16,7 +16,7 @@
         android:theme="@style/Base.Theme.FirstDesign"
         tools:targetApi="31">
         <activity
-            android:name=".Looby"
+            android:name=".Lobby"
             android:exported="false" />
         <activity
             android:name=".SignUp"

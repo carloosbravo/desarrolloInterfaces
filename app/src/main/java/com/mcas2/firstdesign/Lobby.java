@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class Looby extends AppCompatActivity {
+public class Lobby extends AppCompatActivity {
 String username = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
