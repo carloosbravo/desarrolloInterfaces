@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "557924489406",
+    "project_id": "appeventup",
+    "storage_bucket": "appeventup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557924489406:android:8abcb31a9bd5289b9de6ef",
+        "android_client_info": {
+          "package_name": "com.mcas2.firstdesign"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPFLKohVcxy5xndlw3O6GwRURfrNwDE0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

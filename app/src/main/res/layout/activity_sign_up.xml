@@ -4,10 +4,187 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".SignUp"
+    android:background="@drawable/gradient">
 
-   
+    <ImageView
+        android:id="@+id/logoLogin"
+        android:layout_width="181dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/h3SignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="191dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h3SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="138dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="557dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="25dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v2SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="395dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameInputSignUp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/emailInputSignUp"
+        app:layout_constraintEnd_toStartOf="@+id/v2SignUp"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/v1SignUp"
+        app:layout_constraintTop_toTopOf="@+id/h1SignUp"
+        app:layout_constraintVertical_bias="0.078"
+        app:startIconDrawable="@drawable/ic_persona">
+
+        <EditText
+            android:id="@+id/usernameInputSignUpET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce tu username"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputSignUp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/passwordInputSignUp"
+        app:layout_constraintEnd_toStartOf="@+id/v2SignUp"
+        app:layout_constraintStart_toStartOf="@+id/v1SignUp"
+        app:layout_constraintTop_toBottomOf="@+id/usernameInputSignUp"
+        app:startIconDrawable="@drawable/ic_email">
+
+        <EditText
+            android:id="@+id/emailInputSignUpET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce tu email"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputSignUp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/repeatPasswordEditText"
+        app:layout_constraintEnd_toStartOf="@+id/v2SignUp"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/v1SignUp"
+        app:layout_constraintTop_toBottomOf="@id/emailInputSignUp"
+        app:layout_constraintVertical_bias="0.078"
+        app:startIconDrawable="@drawable/ic_llave">
+
+        <EditText
+            android:id="@+id/passwordInputSignUpET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce tu contraseña"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/repeatPasswordEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/h2SignUp"
+        app:layout_constraintEnd_toStartOf="@+id/v2SignUp"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/v1SignUp"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputSignUp"
+        app:layout_constraintVertical_bias="0.078"
+        app:startIconDrawable="@drawable/ic_llave">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="repite tu contraseña"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/textViewSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lemonmilk"
+        android:text="Sign Up"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/h1SignUp"
+        app:layout_constraintEnd_toStartOf="@+id/v2SignUp"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="@+id/v1SignUp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="652dp" />
+
+    <Button
+        android:id="@+id/registerbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:width="150dp"
+        android:onClick="signUpNewUser"
+        android:text="Sign in"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/v2SignUp"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/v1SignUp"
+        app:layout_constraintTop_toTopOf="@+id/h2SignUp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeToLogin"
+        android:text="Volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/v2SignUp"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="@+id/v1SignUp"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintVertical_bias="0.483" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

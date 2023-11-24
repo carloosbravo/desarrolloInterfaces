@@ -41,9 +41,9 @@
         app:startIconDrawable="@drawable/ic_persona">
 
         <EditText
+            android:id="@+id/usernameInputLoginET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:hint="Username"
             android:inputType="textPersonName" />
 
@@ -61,6 +61,7 @@
         app:startIconDrawable="@drawable/ic_llave">
 
         <EditText
+            android:id="@+id/passwordInputLoginET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -103,6 +104,7 @@
         android:id="@+id/btnSignUp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:onClick="openSignUp"
         android:text="Sign up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +114,7 @@
         app:layout_constraintVertical_bias="0.138" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/forgotPasswordTextView"
         android:layout_width="134dp"
         android:layout_height="21dp"
         android:layout_marginEnd="28dp"
