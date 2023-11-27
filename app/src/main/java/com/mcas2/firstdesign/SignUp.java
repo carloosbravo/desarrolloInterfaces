@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
                 .set(users).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Intent toLobby = new Intent(SignUp.this, Lobby.class);
+                        Intent toLobby = new Intent(SignUp.this, Home.class);
                         toLobby.putExtra("username", usernameString);
                         startActivity(toLobby);
                     }

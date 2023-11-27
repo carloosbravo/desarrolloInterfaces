@@ -16,7 +16,13 @@
         android:theme="@style/Base.Theme.FirstDesign"
         tools:targetApi="31">
         <activity
-            android:name=".Lobby"
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Search"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
             android:exported="false" />
         <activity
             android:name=".SignUp"
