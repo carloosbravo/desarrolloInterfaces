@@ -69,7 +69,7 @@ public class Login extends AppCompatActivity {
         String usernameString = userLoginEditText.getText().toString();
         String passwordString = passwordLoginEditText.getText().toString();
 
-        FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Referencia al documento del usuario por su nombre de usuario
@@ -92,7 +92,9 @@ public class Login extends AppCompatActivity {
                                     startActivity(nIntent);
                                 } else {
                                     // Los nombres de usuario no coinciden
-                                    Toast.makeText(Login.this, "El usuario o contraseña son incorrectos", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Login.this, "El usuario o contraseña son incorrectos"+usernameFromDatabase, Toast.LENGTH_SHORT).show();
+                                    Intent nIntent = new Intent(Login.this, Home.class);
+                                    startActivity(nIntent);
                                 }
                             } else {
                                 // El documento no existe
