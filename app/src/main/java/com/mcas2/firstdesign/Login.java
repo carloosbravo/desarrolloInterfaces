@@ -1,9 +1,5 @@
 package com.mcas2.firstdesign;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AlertDialog;
-
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,27 +7,22 @@ import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.mcas2.firstdesign.database.User;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class Login extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        View alertPassword = LayoutInflater.from(this).inflate(R.layout.dialog_forgot_password, null);
-
-
     }
 
     public void showAlertviewContraseña(View view) {
@@ -64,20 +55,54 @@ public class Login extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void openSignUp(View view){
-            Intent nIntent = new Intent(Login.this,SignUp.class);
-            startActivity(nIntent);
+    public void openSignUp(View view) {
+        Intent nIntent = new Intent(Login.this, SignUp.class);
+        startActivity(nIntent);
     }
 
-    public void chechkLogIn(View view){
-        EditText userLoginEdittext = findViewById(R.id.usernameInputSignUp);
-        EditText passwordLoginEdittext = findViewById(R.id.passwordInputLogin);
+    public void checkLogIn(View view) {
 
-        String usernameString = userLoginEdittext.getText().toString();
-        String passwordString = passwordLoginEdittext.getText().toString();
+       EditText userLoginEditText = (EditText) findViewById(R.id.usernameInputLoginET);
+       EditText passwordLoginEditText = (EditText) findViewById(R.id.passwordInputLoginET);
+
+
+        String usernameString = userLoginEditText.getText().toString();
+        String passwordString = passwordLoginEditText.getText().toString();
 
         FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
-        Map<String, User> users = new HashMap<>();
-        firestoreDb.collection("Collection").document();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Referencia al documento del usuario por su nombre de usuario
+        db.collection("Usuarios").document(usernameString)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // El documento existe, puedes acceder al campo "username"
+                                String usernameFromDatabase = document.getString("username");
+
+                                // Comparar el usernameString con el usernameFromDatabase
+                                if (usernameString.equals(usernameFromDatabase)) {
+                                    // Los nombres de usuario coinciden
+                                    Toast.makeText(Login.this, "Bienvenido", Toast.LENGTH_SHORT).show();
+                                    Intent nIntent = new Intent(Login.this, Home.class);
+                                    startActivity(nIntent);
+                                } else {
+                                    // Los nombres de usuario no coinciden
+                                    Toast.makeText(Login.this, "El usuario o contraseña son incorrectos", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                // El documento no existe
+                                Toast.makeText(Login.this, "Error en el inicio de sesión", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            // Error al obtener el documento
+                            Toast.makeText(Login.this, "Error al encontrar el documento", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }

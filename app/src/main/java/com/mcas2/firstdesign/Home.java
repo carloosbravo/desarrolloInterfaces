@@ -12,7 +12,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lobby);
+        setContentView(R.layout.activity_home);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
@@ -22,7 +22,7 @@ public class Home extends AppCompatActivity {
             if (itemId == R.id.bottom_home) {
                 return true;
             } else if (itemId == R.id.bottom_add) {
-                startActivity(new Intent(getApplicationContext(), Search.class));
+                startActivity(new Intent(getApplicationContext(), AddEvent.class));
                 finish();
                 return true;
             }else if (itemId == R.id.bottom_profile) {
